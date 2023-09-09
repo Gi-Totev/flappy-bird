@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 canvas {
@@ -17,7 +18,42 @@ canvas {
   -ms-interpolation-mode: nearest-neighbor;
 }
 
-.visually-hidden {
-  visibility: hidden;
+.background {
   pointer-events: none;
+}
+
+.background > div {
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.background > div:not(#sky) {
+  inset: auto 0 0 0;
+}
+
+#sky {
+  background-image: url(assets/backgrounds/Sky.png);
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+}
+
+#clouds {
+  background-image: url(assets/backgrounds/Clouds.png);
+  height: 75vw;
+  z-index: 1;
+}
+
+#buildings {
+  background-image: url(assets/backgrounds/Buildings.png);
+  height: 50vw;
+  z-index: 2;
+}
+
+#trees {
+  background-image: url(assets/backgrounds/Trees.png);
+  height: 25vw;
+  z-index: 2;
 }
